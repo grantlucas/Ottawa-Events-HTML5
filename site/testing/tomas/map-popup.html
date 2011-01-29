@@ -13,6 +13,8 @@
     var address;
     var latlng2;
     var markersArray = [];
+    var infowindow;
+    var infoMarker;
     
  
     function initialize() {
@@ -37,15 +39,20 @@
     }
     
     function info(latlng2){
-    	var marker = new google.maps.Marker({
+	    clearOverlays();
+    	var infoMarker = new google.maps.Marker({
 	            position: latlng2,
 	            title: "test"
 	    });
-	    marker.setMap(map);
-	    var infowindow = new google.maps.InfoWindow({
+	    infoMarker.setMap(map);
+	    infowindow = new google.maps.InfoWindow({
         	content: "hi"
 	    });
-	    infowindow.open(map,marker);
+	    infowindow.open(map,infoMarker);
+    }
+    function hideInfo(){
+    	infowindow.hide();
+    	showOverlays();
     }
 
     function showAddress(address) {
@@ -102,6 +109,7 @@
       </p> 
       <div id="map_canvas" style="width: 500px; height: 300px"></div> 
     </form> 
+    
   </body> 
 </html> 
  
