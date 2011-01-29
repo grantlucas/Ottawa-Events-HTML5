@@ -16,7 +16,7 @@ var allEvents = [];		//holds all events
 //function to load and parse data
 
 //function to search a region for events
-function searchEventRegion(google.maps.Map googleMap, int long1, int lat1, int long2, int lat2 )
+function searchEventRegion(googleMap, long1, lat1, long2, lat2 )
 {
 	eventsWithinRegion = returnEventsWithinRegion( long1, lat1, long2, lat2 );
 	
@@ -29,7 +29,7 @@ function searchEventRegion(google.maps.Map googleMap, int long1, int lat1, int l
 //return an array of indices corresponding to events present within region
 //long1, lat2 = topLeft corner
 //long2, lat2 = bottomRight corner
-function returnEventsWithinRegion( int long1, int lat1, int long2, int lat2 )
+function returnEventsWithinRegion( long1, lat1, long2, lat2 )
 {
 	var eventIndices = [];
 	
@@ -47,7 +47,7 @@ function returnEventsWithinRegion( int long1, int lat1, int long2, int lat2 )
 }
 
 //add event marker
-function addEventMarker(google.maps.Map googleMap, int long, int lat , string markerTitle )
+function addEventMarker(googleMap, long, lat, markerTitle )
 {
 	var marker = new google.maps.Marker({
       position: myLatlng, 
