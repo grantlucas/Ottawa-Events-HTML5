@@ -16,3 +16,30 @@ article {
 footer {
 }
 
+#categoryFilters {
+  border:1px solid #aaa;
+  margin:0.5em;
+  padding:0.5em;
+}
+
+#categoryFilters ul {
+  display:block;
+  margin:0.5em 0;
+  overflow:hidden; /* clearfix */
+}
+
+#categoryFilters li {
+  display:block;
+  width:8em;
+  float:left;
+  white-space:nowrap;
+}
+
+#categoryFilters li input {
+  margin-right:0.5em;
+}
+
+#categoryFilters a {
+  padding-right:0.5em;
+}
+
