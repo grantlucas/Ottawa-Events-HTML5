@@ -53,14 +53,15 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container shadow">
     <header>
       <h1><a href='/'>Ottawa Events</a></h1>
     </header>
 
     <section class="clearfix">
       <section class="map left">
-        <iframe width="640" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;hq=&amp;hnear=1801+Riverside+Dr,+Ottawa,+Ottawa+Division,+Ontario,+Canada&amp;t=h&amp;ll=45.401313,-75.666511&amp;spn=0.007187,0.013733&amp;z=16&amp;output=embed"></iframe>
+ 
+ 
       </section>
       <aside class="sidebar right">
         <ul class="tabs">
@@ -68,21 +69,30 @@
             <li><a href="#tab2">Filters</a></li>
         </ul>
         <div class="tab_container">
-            <div id="tab1" class="tab_content">
-                Events
-            </div>
-            <div id="tab2" class="tab_content">
-               Filters
-            </div>
+            <section id="tab1" class="tab_content">
+                List of events here...
+                <ul>
+                  <li>Event</li>
+                  <li>Event</li>
+                  <li>Event</li>
+                </ul>
+            </section>
+            <section id="tab2" class="tab_content">
+               <section id="categoryFilters">
+                  <h3>Event categories to show</h3>
+                  <ul></ul>
+                  <a href='#' class='check_all_categories'>Check all</a>
+                  <a href='#' class='clear_all_categories'>Clear all</a>
+                </section>
+                <section id="sectionFilters">
+                   <h3>Section</h3>
+                
+                 </section>
+            </section>
         </div>
       </aside>
     </section>
-      <section id='categoryFilters'>
-        <h3>Event categories to show</h3>
-        <ul></ul>
-        <a href='#' class='check_all_categories' />Check all
-        <a href='#' class='clear_all_categories' />Clear all
-      </section>
+ 
 
     <footer>
       <p>A Google HTML5 Hack-a-thon project</p>

@@ -11,6 +11,7 @@ header,article,footer,aside{display:block;}
 
 .clearfix:after{ content: "."; display: block; clear: both;	visibility: hidden;	line-height: 0;	height: 0;}
 .clearfix {	display: inline-block;}
+.shadow{ -moz-box-shadow: 0px 0px 15px #888; -webkit-box-shadow: 0px 0px 15px #888; box-shadow: 10px 10px 5px #888;}
 html[xmlns] .clearfix { display: block;}
 * html .clearfix { height: 1%;}
 
@@ -21,11 +22,12 @@ html[xmlns] .clearfix { display: block;}
 .container{margin:0 auto;width:960px;background:#fff;}
 header{text-align:center;height:65px;padding-top:20px;}
 article{}
-footer{font-size:12px;text-align:center;margin-top:20px;padding:20px 0; border-top:1px solid #ccc;}
+footer{font-family: Georgia, serif; font-style:italic;font-size:12px;text-align:center;margin-top:20px;padding:20px 0; border-top:1px solid #ccc; color:#acacac;}
 aside{}
 
 .sidebar{width:290px; margin-left:10px;}
-.map{width:640px;background:#ddd;margin-left:10px;}
+.sidebar section{margin-bottom:20px;}
+.map{width:640px;height:480px;background:#ddd;margin-left:10px;}
 
 
 /* ======== */
@@ -85,7 +87,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 }
 
 #categoryFilters {
-  border:1px solid #aaa;
+  /*border:1px solid #aaa;*/
   margin:0.5em;
   padding:0.5em;
 }
