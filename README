@@ -1,0 +1,50 @@
+Ottawa Events in HTML5
+======================
+
+urls
+----
+
+Ottawa Events XML:
+[XML Events](http://ottawa.ca/online_services/opendata/data/spotlight/events.xml)
+[XML Event Categories](http://ottawa.ca/online_services/opendata/data/spotlight/categories.xml)
+[XML Event Options](http://ottawa.ca/online_services/opendata/data/spotlight/eventOptions.xml)
+[XML Locations](http://ottawa.ca/online_services/opendata/data/spotlight/venues.xml)
+[XML City Sectors](http://ottawa.ca/online_services/opendata/data/spotlight/citySectors.xml)
+
+Synposis
+--------
+To utilize Google maps and Ottawa’s Open Data, specifically the bus stop data and spotlight event data, to create a HTML5 application that allows one to browse events of Ottawa and then map a bus route from their current location to the location of the event.
+
+Tasks Required
+--------------
+- UI
+- show Ottawa events
+- have filters for categories of events
+- have Google map
+- English and French?
+- Conversion of event and bus stop data to usable form
+- Logic 
+- to pull bus stop data
+- create (and show) bus route
+- to pull event data
+
+Technology Required
+-------------------
+-Google Maps API
+-showing event locations
+-show info in bubbles
+-plot bus routes
+  -search based on currently viewed area
+  -GIT for code management
+  -Javascript
+  -HTML5
+
+Proposed Event Object Structure
+-------------------------------
+- .eventName
+- .address
+- .category
+- .address
+- .long
+- .lat
+                                    
