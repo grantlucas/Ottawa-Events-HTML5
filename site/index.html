@@ -54,6 +54,8 @@
   </script>
 
 
+  <script src='data/json_events.json'></script>
+  <script src='scripts/map.js'></script>
   <script src='scripts/events.js'></script>
   <script src='scripts/categories.js'></script>
   <script src='scripts/main.js'></script>
@@ -86,35 +88,22 @@
         </ul>
         <div class="tab_container">
             <section id="tab1" class="tab_content">
-                List of events here...
-                <ul>
-                  <li>Event</li>
-                  <li>Event</li>
-                  <li>Event</li>
-                </ul>
+                <ul id='eventList'></ul>
             </section>
             <section id="tab2" class="tab_content">
                <section id="categoryFilters">
-                  <h3>Event categories to show</h3>
+                  <h3>Categories</h3>
                   <ul></ul>
                   <a href='#' class='check_all_categories'>Check all</a>
                   <a href='#' class='clear_all_categories'>Clear all</a>
                 </section>
-                <section id="sectionFilters">
+                <!--<section id="sectionFilters">
                    <h3>Section</h3>
-                
-                 </section>
+               </section>-->
             </section>
         </div>
       </aside>
     </section>
-
-      <section id='categoryFilters'>
-        <h3>Event categories to show</h3>
-        <ul></ul>
-        <a href='#' class='check_all_categories' >Check all</a>
-        <a href='#' class='clear_all_categories' >Clear all</a>
-      </section>
 
     <footer>
       <p>A Google HTML5 Hack-a-thon project</p>
