@@ -1,0 +1,107 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"> 
+  <head> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+    <title>Google Maps API Example: Simple Geocoding</title> 
+    <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script> 
+    <script type="text/javascript"> 
+ 
+    var map;
+    var geocoder;
+    var latlng;
+    var address;
+    var latlng2;
+    var markersArray = [];
+    
+ 
+    function initialize() {
+		geocoder  =  new google.maps.Geocoder();
+        latlng = new google.maps.LatLng(45.4066, -75.7133);
+		var myOptions = {
+     	 zoom: 12,
+     	 center: latlng,
+		 mapTypeId: google.maps.MapTypeId.ROADMAP,
+    	};
+    	
+    	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    }
+    
+    function drop(latlng2){
+    	var marker = new google.maps.Marker({
+	            position: latlng2,
+	            map: map,
+	            title: "address"
+	    });
+		markersArray.push(marker);
+    }
+    
+    function info(latlng2){
+    	var marker = new google.maps.Marker({
+	            position: latlng2,
+	            title: "test"
+	    });
+	    marker.setMap(map);
+	    var infowindow = new google.maps.InfoWindow({
+        	content: "hi"
+	    });
+	    infowindow.open(map,marker);
+    }
+
+    function showAddress(address) {
+
+      	geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        map.setZoom(15);
+        map.fitBounds(results[0].geometry.viewport);
+
+  		drop(results[0].geometry.location);
+  
+		} else {
+        	alert("Geocode was not successful for the following reason: " + status);
+    	}
+   	 });
+    }
+    
+    function clearOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(null);
+	    }
+	  }
+	}
+	
+	// Shows any overlays currently in the array
+	function showOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(map);
+	    }
+	  }
+	}
+	
+	// Deletes all markers in the array by removing references to them
+	function deleteOverlays() {
+	  if (markersArray) {
+	    for (i in markersArray) {
+	      markersArray[i].setMap(null);
+	    }
+	    markersArray.length = 0;
+	  }
+	}
+    
+    </script> 
+  </head> 
+ 
+  <body onload="initialize()" onunload="GUnload()"> 
+    <form action="#" onsubmit="showAddress(this.address.value); return false"> 
+      <p> 
+        <input type="text" size="60" name="address" value="" /> 
+        <input type="submit" value="Go!" /> 
+      </p> 
+      <div id="map_canvas" style="width: 500px; height: 300px"></div> 
+    </form> 
+  </body> 
+</html> 
+ 
