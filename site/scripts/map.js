@@ -3,6 +3,7 @@
     var markersArray = [];
     var infowindow;
     var infoMarker;
+    var contentStr;
 
     function drop(latlng2){
     	var marker = new google.maps.Marker({
@@ -13,7 +14,7 @@
 		markersArray.push(marker);
     }
     
-    function info(latlng2){
+    function info(latlng2, contentStr){
 	    clearOverlays();
     	var infoMarker = new google.maps.Marker({
 	            position: latlng2,
@@ -21,7 +22,7 @@
 	    });
 	    infoMarker.setMap(map);
 	    infowindow = new google.maps.InfoWindow({
-        	content: "hi"
+        	content: contentStr
 	    });
 	    infowindow.open(map,infoMarker);
     }
