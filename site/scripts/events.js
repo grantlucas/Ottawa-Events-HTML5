@@ -3,12 +3,12 @@ events = new Array();
 
 $(document).ready(function() {
     //load the events xml file
-    $.ajax({
+    /*$.ajax({
         type: "GET",
         url: "data/events.xml",
         dataType: "xml",
         success: parseEvents
-      });
+      });*/
 });
 
 function parseEvents(xml)
