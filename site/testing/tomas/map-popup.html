@@ -54,14 +54,27 @@
     	infowindow.hide();
     	showOverlays();
     }
+    
+    function getAddress(address) {
+
+      	geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var loc = results[0].geometry.location;
+        return loc;
+       		} else {
+        	alert("Geocode was not successful for the following reason: " + status);
+    	}
+   	 });
+    }
+
 
     function showAddress(address) {
 
       	geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        map.setZoom(15);
-        map.fitBounds(results[0].geometry.viewport);
+        //map.setCenter(results[0].geometry.location);
+        //map.setZoom(15);
+        //map.fitBounds(results[0].geometry.viewport);
 
   		drop(results[0].geometry.location);
   
