@@ -50,7 +50,7 @@
       if (status == google.maps.GeocoderStatus.OK) {
         //map.setCenter(results[0].geometry.location);
         //map.setZoom(15);
-        //map.fitBounds(results[0].geometry.viewport);
+        map.fitBounds(results[0].geometry.viewport);
 
   		drop(results[0].geometry.location);
   
