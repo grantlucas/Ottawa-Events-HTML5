@@ -5,7 +5,7 @@ $(document).ready(function() {
     //load the events xml file
     $.ajax({
         type: "GET",
-        url: "../data/events.xml",
+        url: "data/events.xml",
         dataType: "xml",
         success: parseEvents
       });
