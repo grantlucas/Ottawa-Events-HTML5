@@ -25,7 +25,7 @@ function eventClicked(eventElem) {
     var loc = null;
     for (var i in evt.locations) { loc = evt.locations[i]; break; }
     var addy = loc.address_english || loc.intersection_english;
-    getAddress(addy);
+    showAddress(addy);
   } catch(e) {}
 }
 
