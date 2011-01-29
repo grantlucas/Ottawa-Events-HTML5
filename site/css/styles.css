@@ -113,3 +113,22 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
   padding-right:0.5em;
 }
 
+#eventList {
+  display:block;
+}
+
+#eventList li {
+  display:block;
+  margin:0.25em 0;
+  padding:0.25em;
+  line-height:1.5em;
+  border:1px solid #aaa;
+  cursor:pointer;
+}
+
+#eventList li:hover, #eventList li:active, #eventList li:focus {
+  border:1px solid #999;
+  background-color:#eee;
+}
+
+

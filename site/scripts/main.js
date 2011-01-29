@@ -5,6 +5,30 @@ if (typeof localStorage == 'undefined') {
 	}
 }
 
+function refreshEventList() {
+  if (typeof Events == 'undefined') return;
+  var eventList = $('#eventList');
+  var html = [];
+  $.each(Events, function(evtId, evt) {
+    html.push('<li onclick="eventClicked($(this))"  data-id="')
+    html.push(evtId);
+    html.push('">');
+    html.push(evt.title_english);
+    html.push('</li>');
+  });
+  eventList.html(html.join(''));
+}
+
+function eventClicked(eventElem) {
+  try {
+    var evt = Events[eventElem.data('id')];
+    var loc = null;
+    for (var i in evt.locations) { loc = evt.locations[i]; break; }
+    var addy = loc.address_english || loc.intersection_english;
+    getAddress(addy);
+  } catch(e) {}
+}
+
 function refreshCategoryList() {
   if (typeof Categories == 'undefined') return;
   var filterList  = $('#categoryFilters ul');
@@ -46,6 +70,9 @@ function clear_all_categories() {
 $(document).ready(function() {
 	//localStorage.setItem('test','sample');
 	//if (localStorage.getItem('test') == 'sample') $('article').html('Local storage works');
+
+  // load the event list
+  refreshEventList();
 
   // load and activate the category filters
   $('.check_all_categories').click(function(e) { check_all_categories(); e.preventDefault(); });

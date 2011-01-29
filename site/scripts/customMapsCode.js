@@ -15,7 +15,15 @@
 */
 
 
-//function to load and parse data
+//$(document).ready(function() {
+//    //load the events xml file
+//    $.ajax({
+//        type: "GET",
+//        url: "../data/events.xml",
+//        dataType: "xml",
+//        success: parseEvents
+//      });
+//});
 
 //function to search a region for events
 function searchEventRegion(googleMap, long1, lat1, long2, lat2 )
@@ -38,8 +46,7 @@ function returnEventsWithinRegion( long1, lat1, long2, lat2 )
 	//loop through events and add those that are within regional bounds
 	for (var i = 0; i < allEvents.length; i++ )
 	{
-		if ( 	(( events[i].lat => lat1 )&&( events[i].lat <= lat2 )) && 
-				(( events[i].long => long1 ) && ( events[i].lat <= long2 )) )
+		if ( 	(( events[i].lat => lat1 )&&( events[i].lat <= lat2 )) && (( events[i].long => long1 ) && ( events[i].lat <= long2 )) )
 		{
 			eventIndices[ eventIndices.length ] = i;	
 		}
