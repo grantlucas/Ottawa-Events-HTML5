@@ -15,6 +15,7 @@
   <link rel='stylesheet' href='css/styles.css' />
 
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script> 
 
   
   <script>
@@ -36,6 +37,20 @@
     		return false;
     	});
   });
+  var map;
+    var geocoder;
+    var latlng;
+   function initialize() {
+		geocoder  =  new google.maps.Geocoder();
+        latlng = new google.maps.LatLng(45.4066, -75.7133);
+		var myOptions = {
+     	 zoom: 12,
+     	 center: latlng,
+		 mapTypeId: google.maps.MapTypeId.ROADMAP,
+    	};
+    	
+    	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    }
   </script>
 
 
