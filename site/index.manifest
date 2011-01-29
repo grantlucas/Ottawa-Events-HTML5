@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+# Offine cache
+index.html
+css/styles.css
+scripts/main.js
+
+# Future files
+#resources/favicon.ico
+#resources/icon.png # iPhone homepage icon (TBD)
+#resources/startup.png # iPhone app startup background image (TBD)
+
+
