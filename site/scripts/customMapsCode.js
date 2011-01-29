@@ -1,6 +1,8 @@
 //all custom Google Maps javascript
 
-var allEvents = [];		//holds all events
+//allEvents = [];		//holds all events
+//Grant has this in his code
+
 /*
  	function eventObject = 	{	 
  								this.eventName 	= ""
@@ -36,8 +38,8 @@ function returnEventsWithinRegion( long1, lat1, long2, lat2 )
 	//loop through events and add those that are within regional bounds
 	for (var i = 0; i < allEvents.length; i++ )
 	{
-		if ( 	(( allEvents[i].lat => lat1 )&&( allEvents[i].lat <= lat2 )) && 
-				(( allEvents[i].long => long1 ) && ( allEvents[i].lat <= long2 )) )
+		if ( 	(( events[i].lat => lat1 )&&( events[i].lat <= lat2 )) && 
+				(( events[i].long => long1 ) && ( events[i].lat <= long2 )) )
 		{
 			eventIndices[ eventIndices.length ] = i;	
 		}
